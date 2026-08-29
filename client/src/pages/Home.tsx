@@ -154,7 +154,7 @@ export default function Home() {
             <div className="group cursor-pointer bg-gray-50 border border-gray-100 rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/broswer.png" 
+                  src="/browser.png" 
                   alt="Browser" 
                   className="h-28 sm:h-36 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
                 />
