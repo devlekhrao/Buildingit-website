@@ -93,9 +93,6 @@ export default function IntroSequence({ onComplete }: IntroSequenceProps) {
         stage === 7 ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
-      {/* Background Grid Accent */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:2.5rem_2.5rem] pointer-events-none" />
-
       {/* Main Centered Intro Typography */}
       <div 
         className="absolute inset-0 flex flex-col items-center justify-center px-4"
@@ -164,7 +161,7 @@ export default function IntroSequence({ onComplete }: IntroSequenceProps) {
                 <span style={{ opacity: typedWords >= 2 ? 1 : 0, transition: `opacity 0.3s ${EASE}` }}>&nbsp;are&nbsp;</span>
               </span>
 
-              {/* REPLACED WITH ACTUAL LOGO IMAGE: Solves jammed font issue completely */}
+              {/* Logo Image */}
               <div
                 className="flex items-center justify-center ml-2"
                 style={{
