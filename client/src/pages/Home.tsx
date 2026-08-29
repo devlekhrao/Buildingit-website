@@ -136,6 +136,25 @@ export default function Home() {
               </div>
             </div>
 
+            {/* 6. AUTHENTICATOR */}
+            <div className="group cursor-pointer bg-gray-50 border border-gray-100 rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black transition-all duration-500 relative">
+              <div className="flex-1 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/Authenticator.png" 
+                  alt="Authenticator" 
+                  className="h-36 sm:h-44 w-auto object-contain transition-transform duration-500 group-hover:scale-110 scale-125" 
+                  style={{ 
+                    filter: "invert(1) grayscale(1) contrast(300%)", 
+                    mixBlendMode: "multiply",
+                    clipPath: "inset(12% 12% 12% 12%)"
+                  }}
+                />
+              </div>
+              <div className="flex justify-end pt-4">
+                <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-black transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+              </div>
+            </div>
+
           </div>
         </section>
       </main>
