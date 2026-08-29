@@ -57,7 +57,7 @@ export default function Home() {
                 <img 
                   src="/jyanipur.png" 
                   alt="Jyanipur" 
-                  className="h-28 sm:h-36 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
+                  className="h-24 sm:h-32 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
                 />
               </div>
               <div className="flex justify-end pt-4">
@@ -71,7 +71,7 @@ export default function Home() {
                 <img 
                   src="/threepillars.png" 
                   alt="Three Pillars" 
-                  className="h-28 sm:h-36 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
+                  className="h-24 sm:h-32 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
                 />
               </div>
               <div className="flex justify-end pt-4">
@@ -85,7 +85,7 @@ export default function Home() {
                 <img 
                   src="/grid.png" 
                   alt="Grid" 
-                  className="h-36 sm:h-44 w-auto object-contain transition-transform duration-500 group-hover:scale-110 scale-125" 
+                  className="h-24 sm:h-32 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
                   style={{ 
                     filter: "invert(1) grayscale(1) contrast(300%)", 
                     mixBlendMode: "multiply",
@@ -104,7 +104,7 @@ export default function Home() {
                 <img 
                   src="/firstfeedback.png" 
                   alt="FirstFeedback" 
-                  className="h-36 sm:h-44 w-auto object-contain transition-transform duration-500 group-hover:scale-110 scale-125" 
+                  className="h-24 sm:h-32 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
                   style={{ 
                     filter: "invert(1) grayscale(1) contrast(300%)", 
                     mixBlendMode: "multiply",
@@ -123,7 +123,7 @@ export default function Home() {
                 <img 
                   src="/zx.png" 
                   alt="ZX" 
-                  className="h-36 sm:h-44 w-auto object-contain transition-transform duration-500 group-hover:scale-110 scale-125" 
+                  className="h-24 sm:h-32 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
                   style={{ 
                     filter: "invert(1) grayscale(1) contrast(300%)", 
                     mixBlendMode: "multiply",
@@ -142,7 +142,7 @@ export default function Home() {
                 <img 
                   src="/Authenticator.png" 
                   alt="Authenticator" 
-                  className="h-28 sm:h-36 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
+                  className="h-24 sm:h-32 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
                 />
               </div>
               <div className="flex justify-end pt-4">
@@ -156,7 +156,7 @@ export default function Home() {
                 <img 
                   src="/browser.png" 
                   alt="Browser" 
-                  className="h-28 sm:h-36 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
+                  className="h-24 sm:h-32 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
                 />
               </div>
               <div className="flex justify-end pt-4">
