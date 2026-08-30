@@ -1,0 +1,899 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Outfit", sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Custom Silver Page Background Gradient Helper */
+.silver-page-bg {
+  background: radial-gradient(circle at center, #ffffff 0%, #f1f5f9 50%, #cbd5e1 100%);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.87 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.87 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.706 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.145 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* Custom Utilities for Premium Silver Styling */
+.silver-metallic-text {
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 50%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Premium Liquid Glassmorphism Effect */
+@keyframes fluidMesh {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes liquidPulse {
+  0%, 100% {
+    border-radius: 24px;
+    transform: scale(1);
+  }
+  50% {
+    border-radius: 28px;
+    transform: scale(1.01);
+  }
+}
+
+.silver-metallic-box {
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.35) 0%, 
+    rgba(241, 245, 249, 0.2) 40%, 
+    rgba(255, 255, 255, 0.45) 60%, 
+    rgba(203, 213, 225, 0.25) 100%
+  );
+  background-size: 200% 200%;
+  animation: 
+    fluidMesh 12s ease infinite,
+    liquidPulse 8s ease-in-out infinite;
+  backdrop-filter: blur(32px) saturate(210%);
+  -webkit-backdrop-filter: blur(32px) saturate(210%);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 
+    0 35px 70px -15px rgba(0, 0, 0, 0.06),
+    0 15px 30px -10px rgba(148, 163, 184, 0.1),
+    inset 0 2px 4px rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.01),
+    inset 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.silver-metallic-box:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 40px 80px -15px rgba(0, 0, 0, 0.08),
+    0 20px 40px -10px rgba(148, 163, 184, 0.15),
+    inset 0 2px 6px rgba(255, 255, 255, 0.9),
+    inset 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+/* 3D Cubic Layout Styles for Carousel */
+.perspective-container {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.black-cubic-card {
+  background: linear-gradient(135deg, #18181b 0%, #09090b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 40px;
+  /* Premium Deep Below Shadow for 3D Cards */
+  box-shadow: 
+    0 35px 70px -15px rgba(0, 0, 0, 0.45),
+    0 20px 40px -10px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.05);
+  backface-visibility: hidden;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.black-cubic-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 40px 80px -15px rgba(0, 0, 0, 0.6),
+    0 25px 50px -10px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.1);
+}
+
+.silver-cubic-card {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e1 100%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 40px;
+  /* Premium Deep Below Shadow for 3D Cards */
+  box-shadow: 
+    0 35px 70px -15px rgba(0, 0, 0, 0.5),
+    0 20px 40px -10px rgba(0, 0, 0, 0.4),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.9);
+  backface-visibility: hidden;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.silver-cubic-card:hover {
+  border-color: rgba(255, 255, 255, 1);
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #cbd5e1 100%);
+  box-shadow: 
+    0 40px 80px -15px rgba(0, 0, 0, 0.65),
+    0 25px 50px -10px rgba(0, 0, 0, 0.5),
+    inset 0 1.5px 3px rgba(255, 255, 255, 1);
+}
+
+/* Faster Slide Down Suffix Text Animation inside the locked Silver Box */
+@keyframes slideDownText {
+  0% {
+    transform: translateY(-85%) scale(0.94);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  18% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+  82% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: translateY(85%) scale(0.94);
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
+.animate-slide-down-text {
+  animation: slideDownText 1.0s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Blueprint HUD Rotating Keyframes */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-reverse-slow {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.4; }
+}
+.animate-spin-slow {
+  animation: spin-slow 25s linear infinite;
+}
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 35s linear infinite;
+}
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* High-Contrast Silver Topbar and Boxed Hover/Selected Links */
+.nav-topbar-silver {
+  background: linear-gradient(180deg, #f4f4f5 0%, #d4d4d8 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Floating silver left sidebar (detached, rounded/pill edges) */
+.nav-sidebar-silver {
+  background: linear-gradient(160deg, #fafafa 0%, #d4d4d8 55%, #c4c4c8 100%);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.45),
+    0 2px 6px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.nav-link-box {
+  @apply text-xs font-mono tracking-widest uppercase font-black px-4 py-2.5 rounded-lg border border-transparent transition-all duration-200 ease-out relative overflow-hidden;
+}
+
+.nav-link-box-inactive {
+  @apply text-zinc-600 hover:text-zinc-950 hover:bg-zinc-950/[0.06] hover:border-zinc-950/15;
+}
+
+.nav-link-box-active {
+  @apply text-zinc-950 bg-zinc-950/[0.08] border-zinc-950/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.08)];
+}
+
+.nav-brand-text {
+  @apply font-display font-black text-lg tracking-tight text-zinc-950 hover:text-zinc-700 transition-colors duration-200;
+}
+
+/* High-Contrast Neon Text Glow Effects for Dark/Black Backgrounds */
+.neon-glow-tools {
+  color: #00f0ff;
+  text-shadow: 
+    0 0 8px rgba(0, 240, 255, 0.9), 
+    0 0 20px rgba(0, 240, 255, 0.6), 
+    0 0 40px rgba(0, 240, 255, 0.3);
+}
+.neon-glow-software {
+  color: #3b82f6;
+  text-shadow: 
+    0 0 8px rgba(59, 130, 246, 0.9), 
+    0 0 20px rgba(59, 130, 246, 0.6), 
+    0 0 40px rgba(59, 130, 246, 0.3);
+}
+.neon-glow-ai {
+  color: #f43f5e;
+  text-shadow: 
+    0 0 8px rgba(244, 63, 94, 0.9), 
+    0 0 20px rgba(244, 63, 94, 0.6), 
+    0 0 40px rgba(244, 63, 94, 0.3);
+}
+.neon-glow-cybersecurity {
+  color: #10b981;
+  text-shadow: 
+    0 0 8px rgba(16, 185, 129, 0.9), 
+    0 0 20px rgba(16, 185, 129, 0.6), 
+    0 0 40px rgba(16, 185, 129, 0.3);
+}
+.neon-glow-fintech {
+  color: #f97316;
+  text-shadow: 
+    0 0 8px rgba(249, 115, 22, 0.9), 
+    0 0 20px rgba(249, 115, 22, 0.6), 
+    0 0 40px rgba(249, 115, 22, 0.3);
+}
+.neon-glow-logistics {
+  color: #06b6d4;
+  text-shadow: 
+    0 0 8px rgba(6, 182, 212, 0.9), 
+    0 0 20px rgba(6, 182, 212, 0.6), 
+    0 0 40px rgba(6, 182, 212, 0.3);
+}
+.neon-glow-retailsaas {
+  color: #ec4899;
+  text-shadow: 
+    0 0 8px rgba(236, 72, 153, 0.9), 
+    0 0 20px rgba(236, 72, 153, 0.6), 
+    0 0 40px rgba(236, 72, 153, 0.3);
+}
+.neon-glow-ecosystem {
+  color: #a855f7;
+  text-shadow: 
+    0 0 8px rgba(168, 85, 247, 0.9), 
+    0 0 20px rgba(168, 85, 247, 0.6), 
+    0 0 40px rgba(168, 85, 247, 0.3);
+}
+
+
+/* ===== Website Intro Sequence ===== */
+@keyframes intro-fade-up {
+  0% { opacity: 0; transform: translateY(24px); filter: blur(8px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+@keyframes intro-punch-in {
+  0% { opacity: 0; transform: scale(0.92); filter: blur(10px); }
+  60% { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes intro-pill-fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes intro-overlay-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes intro-suffix-pop {
+  0% { opacity: 0; transform: translateY(14px) scale(0.9); filter: blur(6px); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.intro-fade-up {
+  animation: intro-fade-up 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+.intro-punch-in {
+  animation: intro-punch-in 0.55s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+/* Button-to-bar expansion. The anchor handles the vertical drop via transform;
+   the pill itself smoothly animates ONLY its width (compact button -> full bar).
+   Width is centered (anchor uses justify-center) so it grows symmetrically from
+   the middle outward with no left/right jump. */
+.intro-pill-width {
+  transition:
+    width 1s cubic-bezier(0.22, 1, 0.36, 1),
+    justify-content 0s;
+  will-change: width;
+}
+.intro-suffix-pop {
+  animation: intro-suffix-pop 0.28s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+
+.intro-overlay-out {
+  animation: intro-overlay-out 0.5s ease-out both;
+}
+
+@keyframes intro-caret-blink {
+  0%, 45% { opacity: 1; }
+  50%, 95% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.intro-caret {
+  animation: intro-caret-blink 0.9s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-fade-up,
+  .intro-punch-in,
+  .intro-suffix-pop,
+  .intro-pill-width,
+  .intro-caret,
+  .intro-overlay-out {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Lead capture: silver button + floating CTA                          */
+/* ------------------------------------------------------------------ */
+.btn-silver {
+  background: linear-gradient(160deg, #fafafa 0%, #d4d4d8 55%, #c4c4c8 100%);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 2px 6px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  color: #09090b;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.btn-silver:hover {
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.5),
+    0 3px 8px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.btn-silver:active {
+  transform: scale(0.97);
+}
+
+/* Floating CTA pill that follows the scroll */
+.cta-float {
+  background: linear-gradient(160deg, #fafafa 0%, #d4d4d8 55%, #c4c4c8 100%);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.5),
+    0 2px 6px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  color: #09090b;
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cta-float:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.55),
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+.cta-float:active {
+  transform: scale(0.97);
+}
+
+@keyframes cta-enter {
+  from { opacity: 0; transform: translateY(16px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.cta-enter {
+  animation: cta-enter 280ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Dark field styling for the lead form on black surfaces */
+.field-dark {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f4f4f5;
+}
+.field-dark::placeholder { color: rgba(244, 244, 245, 0.4); }
+.field-dark:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+
+/* ------------------------------------------------------------------ */
+/* Interactive "Name it" hero                                          */
+/* ------------------------------------------------------------------ */
+
+/* The silver-rimmed input shell that holds the typing field + CTA */
+.name-it-shell {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 40px rgba(0, 0, 0, 0.5);
+  transition: border-color 200ms cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.name-it-shell:focus-within {
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 0 0 3px rgba(255, 255, 255, 0.07),
+    0 12px 48px rgba(0, 0, 0, 0.55);
+}
+
+/* The raw typing input inside the shell */
+.name-it-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f4f4f5;
+  caret-color: #d4d4d8;
+}
+.name-it-input::placeholder {
+  color: rgba(244, 244, 245, 0.32);
+}
+
+/* The visitor's typed idea, rendered in the silver/neon response line */
+.name-it-idea {
+  background: linear-gradient(120deg, #ffffff 0%, #d4d4d8 45%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 18px rgba(255, 255, 255, 0.25),
+    0 0 40px rgba(255, 255, 255, 0.12);
+}
+
+/* Blinking caret shown at the tail of the live response while typing */
+.name-it-caret {
+  display: inline-block;
+  width: 0.06em;
+  margin-left: 0.04em;
+  background: #d4d4d8;
+  border-radius: 1px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.55);
+  animation: name-it-blink 1s steps(2, start) infinite;
+}
+@keyframes name-it-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* Soft fade/rise for the response line when it (dis)appears */
+@keyframes name-it-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.name-it-rise {
+  animation: name-it-rise 320ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .name-it-caret { animation: none; }
+  .name-it-rise { animation: none; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Glimpse of Ventures + PurpleBat AI core                             */
+/* ------------------------------------------------------------------ */
+
+/* Compact venture chip in the at-a-glance grid */
+.venture-chip {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 200ms cubic-bezier(0.23, 1, 0.32, 1),
+    background 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.venture-chip:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* The PurpleBat AI core orb at the center of the ecosystem diagram */
+.ai-core-orb {
+  background: radial-gradient(circle at 35% 30%, #c4b5fd 0%, #8b5cf6 38%, #6d28d9 70%, #4c1d95 100%);
+  box-shadow:
+    0 0 0 1px rgba(196, 181, 253, 0.4),
+    0 0 30px rgba(139, 92, 246, 0.55),
+    0 0 70px rgba(139, 92, 246, 0.35),
+    inset 0 2px 8px rgba(255, 255, 255, 0.35);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ai-core-orb { animation: ai-core-pulse 3.2s ease-in-out infinite; }
+}
+@keyframes ai-core-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(196, 181, 253, 0.4),
+      0 0 30px rgba(139, 92, 246, 0.55),
+      0 0 70px rgba(139, 92, 246, 0.3),
+      inset 0 2px 8px rgba(255, 255, 255, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(196, 181, 253, 0.6),
+      0 0 44px rgba(139, 92, 246, 0.75),
+      0 0 110px rgba(139, 92, 246, 0.45),
+      inset 0 2px 8px rgba(255, 255, 255, 0.45);
+  }
+}
+
+/* Satellite nodes that orbit the AI core */
+.ai-node {
+  background: linear-gradient(160deg, #fafafa 0%, #d4d4d8 55%, #b8b8bd 100%);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.ai-node:hover {
+  transform: scale(1.12);
+  box-shadow:
+    0 8px 26px rgba(139, 92, 246, 0.4),
+    0 0 18px rgba(139, 92, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* Connection lines pulse from core to nodes */
+@media (prefers-reduced-motion: no-preference) {
+  .ai-link {
+    stroke-dasharray: 4 6;
+    animation: ai-link-flow 1.4s linear infinite;
+  }
+}
+@keyframes ai-link-flow {
+  to { stroke-dashoffset: -20; }
+}
+
+/* The mock AI product UI/UX preview panel */
+.ai-ui-panel {
+  background: linear-gradient(180deg, rgba(24, 24, 27, 0.95) 0%, rgba(9, 9, 11, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.ai-bubble-user {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e4e4e7;
+}
+.ai-bubble-bot {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.22) 0%, rgba(109, 40, 217, 0.14) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  color: #ede9fe;
+}
+
+/* Typing dots inside the AI panel */
+.ai-typing-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: #c4b5fd;
+  display: inline-block;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ai-typing-dot { animation: ai-typing 1.2s ease-in-out infinite; }
+  .ai-typing-dot:nth-child(2) { animation-delay: 0.15s; }
+  .ai-typing-dot:nth-child(3) { animation-delay: 0.3s; }
+}
+@keyframes ai-typing {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* PurpleBat product UI/UX mockup — high-contrast silver shell */
+.pb-app {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+/* Silver sidebar with black logo + black text */
+.pb-sidebar {
+  background: linear-gradient(180deg, #f4f4f5 0%, #d4d4d8 100%);
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+.pb-nav-active {
+  background: rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+/* Typing dots on the light surface (black) */
+.pb-typing-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: #18181b;
+  display: inline-block;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pb-typing-dot { animation: ai-typing 1.2s ease-in-out infinite; }
+  .pb-typing-dot:nth-child(2) { animation-delay: 0.15s; }
+  .pb-typing-dot:nth-child(3) { animation-delay: 0.3s; }
+}
+
+
+/* Infinity Scale: gentle float on the centered card so the stage feels alive */
+@keyframes card-float {
+  0%, 100% { margin-top: 0px; }
+  50% { margin-top: -14px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .card-float {
+    animation: card-float 4.5s ease-in-out infinite;
+  }
+}
+
+
+/* Build roadmap: the live PurpleBat core stage gets a subtle violet-tinted glass treatment */
+.roadmap-core {
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(139, 92, 246, 0.16) 0%, rgba(139, 92, 246, 0) 55%),
+    linear-gradient(135deg, rgba(24, 24, 27, 0.92) 0%, rgba(9, 9, 11, 0.96) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 0 0 1px rgba(139, 92, 246, 0.12),
+    0 18px 50px -28px rgba(139, 92, 246, 0.55);
+}
+.roadmap-core:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 0 0 1px rgba(139, 92, 246, 0.28),
+    0 22px 60px -26px rgba(139, 92, 246, 0.7);
+}
+
+
+/* High-contrast silver roadmap cards (What we're building) */
+.roadmap-silver-card {
+  /* Brighter, higher-contrast brushed silver so cards pop hard off the black bg */
+  background: linear-gradient(150deg, #ffffff 0%, #f3f5f7 38%, #c2c7cd 78%, #9aa1a9 100%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 24px 55px -20px rgba(0, 0, 0, 0.95),
+    0 4px 14px -2px rgba(0, 0, 0, 0.6);
+}
+
+.roadmap-silver-card:hover {
+  background: linear-gradient(150deg, #ffffff 0%, #fafbfc 38%, #ced3d9 78%, #abb2ba 100%);
+  transform: translateY(-3px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.25),
+    0 32px 65px -20px rgba(0, 0, 0, 1),
+    0 6px 18px -2px rgba(0, 0, 0, 0.65);
+}
+
+.roadmap-silver-card--core {
+  background: linear-gradient(150deg, #ffffff 0%, #f3efff 45%, #c9bff0 80%, #a99fd6 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 0 0 1.5px rgba(139, 92, 246, 0.6),
+    0 26px 55px -20px rgba(76, 29, 149, 0.7),
+    0 4px 14px -2px rgba(0, 0, 0, 0.55);
+}
+
+.roadmap-silver-card--core:hover {
+  background: linear-gradient(150deg, #ffffff 0%, #f5f1ff 50%, #d9d1f0 100%);
+}
+
+
+/* Roadmap connecting "stream" between the alternating venture cards */
+.roadmap-stream-track {
+  background: linear-gradient(
+    to bottom,
+    rgba(139, 92, 246, 0.7) 0%,
+    rgba(139, 92, 246, 0.35) 18%,
+    rgba(113, 113, 122, 0.5) 55%,
+    rgba(63, 63, 70, 0.15) 100%
+  );
+  overflow: hidden;
+}
+
+/* Travelling light pulse that flows down the stream */
+.roadmap-stream-flow {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 28%;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(196, 181, 253, 0.95) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: blur(0.5px);
+  box-shadow: 0 0 12px 2px rgba(139, 92, 246, 0.55);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .roadmap-stream-flow {
+    animation: roadmap-stream-travel 3.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+}
+
+@keyframes roadmap-stream-travel {
+  0% {
+    top: -28%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+
+/* Organic plant-stem connector for the roadmap (curving SVG vine) */
+.roadmap-stem-path {
+  filter: drop-shadow(0 0 2px rgba(139, 92, 246, 0.45));
+}
+
+/* The travelling light segment that flows along the curved stem.
+   We use a short visible dash on a long gap and animate the offset,
+   so a bright pulse appears to travel down the vine. */
+.roadmap-stem-pulse {
+  stroke-dasharray: 8 240;
+  stroke-dashoffset: 248;
+  filter: drop-shadow(0 0 2.5px rgba(196, 181, 253, 0.95));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .roadmap-stem-pulse {
+    animation: roadmap-stem-travel 4.2s linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roadmap-stem-pulse {
+    display: none;
+  }
+}
+
+@keyframes roadmap-stem-travel {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
