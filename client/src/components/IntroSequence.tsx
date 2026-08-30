@@ -103,23 +103,25 @@ export default function IntroSequence({ onComplete }: IntroSequenceProps) {
           willChange: "transform, opacity",
         }}
       >
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start w-full max-w-max mx-auto">
           
           {/* Top Line: "You name it." + [Slot Machine] */}
           <div className="flex items-center">
-            <span className="text-5xl sm:text-7xl lg:text-[5.5rem] font-bold tracking-tight text-black whitespace-nowrap">
+            {/* Swapped text-5xl for text-[6.5vw] to scale flawlessly on mobile */}
+            <span className="text-[6.5vw] sm:text-7xl lg:text-[5.5rem] font-bold tracking-tight text-black whitespace-nowrap">
               You name it.
             </span>
             
             <div 
               className={`transition-all duration-700 flex items-center ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                slotMachineVisible ? "max-w-[900px] opacity-100 ml-4 sm:ml-6" : "max-w-0 opacity-0 ml-0"
+                slotMachineVisible ? "max-w-[900px] opacity-100 ml-2 sm:ml-6" : "max-w-0 opacity-0 ml-0"
               }`}
             >
               <div 
-                className="bg-[#18181b] px-6 sm:px-10 relative shadow-2xl overflow-hidden flex items-center"
+                className="bg-[#18181b] px-3 sm:px-10 relative shadow-2xl overflow-hidden flex items-center"
                 style={{ 
-                  fontSize: "clamp(2.25rem, 5vw, 5.5rem)", 
+                  // Updated clamp to map perfectly with the 6.5vw text scale
+                  fontSize: "clamp(1.25rem, 6.5vw, 5.5rem)", 
                   borderRadius: "0.35em", 
                   height: "1.4em" 
                 }}
@@ -129,7 +131,7 @@ export default function IntroSequence({ onComplete }: IntroSequenceProps) {
                 </span>
 
                 <div 
-                  className="absolute inset-x-6 sm:inset-x-10 top-0 flex flex-col"
+                  className="absolute inset-x-3 sm:inset-x-10 top-0 flex flex-col"
                   style={{ 
                     transform: `translateY(-${suffixIdx * (100 / SUFFIXES.length)}%)`,
                     transition: `transform 250ms ${EASE}` 
@@ -152,11 +154,12 @@ export default function IntroSequence({ onComplete }: IntroSequenceProps) {
           {/* Bottom Line: "We are buildingit." */}
           <div 
             className={`flex items-center overflow-hidden transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-              pillRowVisible ? "max-h-[300px] opacity-100 mt-4 sm:mt-6" : "max-h-0 opacity-0 mt-0"
+              pillRowVisible ? "max-h-[300px] opacity-100 mt-2 sm:mt-6" : "max-h-0 opacity-0 mt-0"
             }`}
           >
-            <div className="flex items-center ml-16 sm:ml-28 lg:ml-[11rem]">
-              <span className="text-5xl sm:text-7xl lg:text-[5.5rem] font-bold tracking-tight text-black flex items-center whitespace-nowrap">
+            {/* Shifted static margin to dynamic vw margin for mobile */}
+            <div className="flex items-center ml-[8vw] sm:ml-28 lg:ml-[11rem]">
+              <span className="text-[6.5vw] sm:text-7xl lg:text-[5.5rem] font-bold tracking-tight text-black flex items-center whitespace-nowrap">
                 <span style={{ opacity: typedWords >= 1 ? 1 : 0, transition: `opacity 0.3s ${EASE}` }}>We</span>
                 <span style={{ opacity: typedWords >= 2 ? 1 : 0, transition: `opacity 0.3s ${EASE}` }}>&nbsp;are&nbsp;</span>
               </span>
@@ -173,7 +176,7 @@ export default function IntroSequence({ onComplete }: IntroSequenceProps) {
                 <img 
                   src="/logo.png" 
                   alt="buildingit" 
-                  className="h-16 sm:h-24 md:h-28 w-auto object-contain" 
+                  className="h-[8vw] sm:h-24 md:h-28 w-auto object-contain" 
                 />
               </div>
             </div>
