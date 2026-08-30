@@ -52,7 +52,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
             {/* 1. JYANIPUR */}
-            <div className="group cursor-pointer bg-gray-50 border border-gray-100 rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black transition-all duration-500 relative">
+            <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
                 <img 
                   src="/jyanipur.png" 
@@ -66,7 +66,7 @@ export default function Home() {
             </div>
 
             {/* 2. THREE PILLARS */}
-            <div className="group cursor-pointer bg-gray-50 border border-gray-100 rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black transition-all duration-500 relative">
+            <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
                 <img 
                   src="/threepillars.png" 
@@ -80,7 +80,7 @@ export default function Home() {
             </div>
 
             {/* 3. GRID */}
-            <div className="group cursor-pointer bg-gray-50 border border-gray-100 rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black transition-all duration-500 relative">
+            <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
                 <img 
                   src="/grid.png" 
@@ -99,7 +99,7 @@ export default function Home() {
             </div>
 
             {/* 4. FIRSTFEEDBACK */}
-            <div className="group cursor-pointer bg-gray-50 border border-gray-100 rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black transition-all duration-500 relative">
+            <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
                 <img 
                   src="/firstfeedback.png" 
@@ -118,7 +118,7 @@ export default function Home() {
             </div>
 
             {/* 5. ZX */}
-            <div className="group cursor-pointer bg-gray-50 border border-gray-100 rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black transition-all duration-500 relative">
+            <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
                 <img 
                   src="/zx.png" 
@@ -137,7 +137,7 @@ export default function Home() {
             </div>
 
             {/* 6. AUTHENTICATOR */}
-            <div className="group cursor-pointer bg-gray-50 border border-gray-100 rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black transition-all duration-500 relative">
+            <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
                 <img 
                   src="/Authenticator.png" 
@@ -151,7 +151,7 @@ export default function Home() {
             </div>
 
             {/* 7. BROWSER */}
-            <div className="group cursor-pointer bg-gray-50 border border-gray-100 rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black transition-all duration-500 relative">
+            <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
                 <img 
                   src="/browser.png" 
