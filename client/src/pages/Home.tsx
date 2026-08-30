@@ -54,25 +54,31 @@ export default function Home() {
             {/* 1. JYANIPUR */}
             <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="/jyanipur.png" 
-                  alt="Jyanipur" 
-                  className="h-36 sm:h-48 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
-                />
+                {/* Animation Wrapper */}
+                <div className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                  <img 
+                    src="/jyanipur.png" 
+                    alt="Jyanipur" 
+                    className="h-28 sm:h-40 w-auto object-contain" 
+                    style={{ transform: "scale(1.25)" }} 
+                  />
+                </div>
               </div>
               <div className="flex justify-end pt-4">
                 <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-black transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
               </div>
             </div>
 
-            {/* 2. THREE PILLARS */}
+            {/* 2. THREE PILLARS (Baseline - No scale needed) */}
             <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="/threepillars.png" 
-                  alt="Three Pillars" 
-                  className="h-36 sm:h-48 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
-                />
+                <div className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                  <img 
+                    src="/threepillars.png" 
+                    alt="Three Pillars" 
+                    className="h-28 sm:h-40 w-auto object-contain" 
+                  />
+                </div>
               </div>
               <div className="flex justify-end pt-4">
                 <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-black transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
@@ -82,16 +88,19 @@ export default function Home() {
             {/* 3. GRID */}
             <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="/grid.png" 
-                  alt="Grid" 
-                  className="h-36 sm:h-48 w-auto object-contain transition-transform duration-500 group-hover:scale-110 scale-125" 
-                  style={{ 
-                    filter: "invert(1) grayscale(1) contrast(300%)", 
-                    mixBlendMode: "multiply",
-                    clipPath: "inset(12% 12% 12% 12%)"
-                  }}
-                />
+                <div className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                  <img 
+                    src="/grid.png" 
+                    alt="Grid" 
+                    className="h-28 sm:h-40 w-auto object-contain" 
+                    style={{ 
+                      transform: "scale(1.6)", 
+                      filter: "invert(1) grayscale(1) contrast(300%)", 
+                      mixBlendMode: "multiply",
+                      clipPath: "inset(12% 12% 12% 12%)"
+                    }}
+                  />
+                </div>
               </div>
               <div className="flex justify-end pt-4">
                 <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-black transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
@@ -101,16 +110,19 @@ export default function Home() {
             {/* 4. FIRSTFEEDBACK */}
             <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="/firstfeedback.png" 
-                  alt="FirstFeedback" 
-                  className="h-36 sm:h-48 w-auto object-contain transition-transform duration-500 group-hover:scale-110 scale-125" 
-                  style={{ 
-                    filter: "invert(1) grayscale(1) contrast(300%)", 
-                    mixBlendMode: "multiply",
-                    clipPath: "inset(12% 12% 12% 12%)"
-                  }}
-                />
+                <div className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                  <img 
+                    src="/firstfeedback.png" 
+                    alt="FirstFeedback" 
+                    className="h-28 sm:h-40 w-auto object-contain" 
+                    style={{ 
+                      transform: "scale(1.4)", 
+                      filter: "invert(1) grayscale(1) contrast(300%)", 
+                      mixBlendMode: "multiply",
+                      clipPath: "inset(12% 12% 12% 12%)"
+                    }}
+                  />
+                </div>
               </div>
               <div className="flex justify-end pt-4">
                 <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-black transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
@@ -120,16 +132,19 @@ export default function Home() {
             {/* 5. ZX */}
             <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="/zx.png" 
-                  alt="ZX" 
-                  className="h-36 sm:h-48 w-auto object-contain transition-transform duration-500 group-hover:scale-110 scale-125" 
-                  style={{ 
-                    filter: "invert(1) grayscale(1) contrast(300%)", 
-                    mixBlendMode: "multiply",
-                    clipPath: "inset(12% 12% 12% 12%)"
-                  }}
-                />
+                <div className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                  <img 
+                    src="/zx.png" 
+                    alt="ZX" 
+                    className="h-28 sm:h-40 w-auto object-contain" 
+                    style={{ 
+                      transform: "scale(1.4)", 
+                      filter: "invert(1) grayscale(1) contrast(300%)", 
+                      mixBlendMode: "multiply",
+                      clipPath: "inset(12% 12% 12% 12%)"
+                    }}
+                  />
+                </div>
               </div>
               <div className="flex justify-end pt-4">
                 <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-black transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
@@ -139,11 +154,14 @@ export default function Home() {
             {/* 6. AUTHENTICATOR */}
             <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="/Authenticator.png" 
-                  alt="Authenticator" 
-                  className="h-36 sm:h-48 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
-                />
+                <div className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                  <img 
+                    src="/Authenticator.png" 
+                    alt="Authenticator" 
+                    className="h-28 sm:h-40 w-auto object-contain" 
+                    style={{ transform: "scale(1.3)" }}
+                  />
+                </div>
               </div>
               <div className="flex justify-end pt-4">
                 <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-black transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
@@ -153,11 +171,14 @@ export default function Home() {
             {/* 7. BROWSER */}
             <div className="group cursor-pointer bg-white border border-gray-200 shadow-sm rounded-2xl p-10 flex flex-col justify-between aspect-[4/3] hover:border-black hover:shadow-md transition-all duration-500 relative">
               <div className="flex-1 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="/browser.png" 
-                  alt="Browser" 
-                  className="h-36 sm:h-48 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
-                />
+                <div className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                  <img 
+                    src="/browser.png" 
+                    alt="Browser" 
+                    className="h-28 sm:h-40 w-auto object-contain" 
+                    style={{ transform: "scale(1.4)" }}
+                  />
+                </div>
               </div>
               <div className="flex justify-end pt-4">
                 <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-black transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
