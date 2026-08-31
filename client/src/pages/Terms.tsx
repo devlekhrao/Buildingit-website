@@ -25,7 +25,8 @@ export default function Terms() {
 
           <div>
             <h2 className="text-black font-semibold text-sm mb-1">2. Intellectual Property Rights</h2>
-            <p>All trademarks, logos, operational marks, brand assets, and visual materials displayed on this site (including Jyanipur, Three Pillars, Grid, FirstFeedback, and ZX) are the exclusive intellectual property of Building It Private Limited. Unauthorized replication, modification, or commercial exploitation is strictly prohibited.</p>
+            {/* UPDATED: Added Authenticator, Browser, Grapes, and empty to the list */}
+            <p>All trademarks, logos, operational marks, brand assets, and visual materials displayed on this site (including Jyanipur, Three Pillars, Grid, FirstFeedback, ZX, Authenticator, Browser, Grapes, and empty) are the exclusive intellectual property of Building It Private Limited. Unauthorized replication, modification, or commercial exploitation is strictly prohibited.</p>
           </div>
 
           <div>
