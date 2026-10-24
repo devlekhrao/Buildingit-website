@@ -55,6 +55,12 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Use local route during development, live subdomain on production
+  const policiesUrl =
+    typeof window !== "undefined" && window.location.hostname.includes("localhost")
+      ? "/overview"
+      : "https://policies.buildingit.in";
+
   return (
     <>
       <style>{`
@@ -65,6 +71,10 @@ export default function Home() {
         :root {
           --font-sans: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           --font-mono: "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        html {
+          scrollbar-gutter: stable;
         }
 
         body {
@@ -108,24 +118,26 @@ export default function Home() {
         
         {/* 
           =================================================
-          ROW 1: NAVIGATION GRID
+          ROW 1: LOCKED ZERO-FLUCTUATION NAVBAR (h-20)
           =================================================
         */}
-        <header className="grid grid-cols-1 md:grid-cols-12 border-b border-white/15 w-full sticky top-0 bg-black/80 backdrop-blur-md z-50">
+        <header className="grid grid-cols-1 md:grid-cols-12 border-b border-white/15 w-full sticky top-0 bg-black/90 backdrop-blur-md z-50 h-20">
           {/* Logo Cell */}
-          <div className="md:col-span-3 border-b md:border-b-0 md:border-r border-white/15 p-6 flex items-center justify-between md:justify-start">
-            <img src="/logo.png" alt="buildingit" className="h-8 md:h-10 object-contain invert" />
+          <div className="md:col-span-3 border-b md:border-b-0 md:border-r border-white/15 px-6 md:px-8 h-full flex items-center justify-between md:justify-start">
+            <Link href="/">
+              <img src="/logo.png" alt="buildingit" className="h-8 md:h-10 object-contain invert cursor-pointer" />
+            </Link>
             <span className="md:hidden text-xs font-mono text-gray-500 uppercase">Menu</span>
           </div>
           
           {/* Links Cell */}
-          <div className="hidden md:flex md:col-span-6 border-r border-white/15 p-6 items-center gap-8 text-[11px] font-mono tracking-[0.2em] uppercase text-gray-400">
+          <div className="hidden md:flex md:col-span-6 border-r border-white/15 px-8 h-full items-center gap-8 text-[11px] font-mono tracking-[0.2em] uppercase text-gray-400">
             <a href="#ecosystem" className="hover:text-white transition-colors">Ecosystem</a>
             <a href="#manifesto" className="hover:text-white transition-colors">Manifesto</a>
           </div>
           
           {/* Action Cell */}
-          <div className="hidden md:flex md:col-span-3 p-6 items-center justify-end">
+          <div className="hidden md:flex md:col-span-3 px-6 md:px-8 h-full items-center justify-end">
             <button className="text-[11px] font-mono tracking-[0.2em] uppercase text-white hover:text-gray-400 transition-colors flex items-center gap-2">
               Investor Portal
             </button>
@@ -259,9 +271,12 @@ export default function Home() {
             © {new Date().getFullYear()} buildingit Private Limited. All rights reserved.
           </div>
           <div className="md:col-span-6 p-6 md:p-8 flex items-center gap-8">
-            <Link href="/overview" className="hover:text-white transition-colors cursor-pointer">
+            <a 
+              href={policiesUrl}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
               Buildingit Policies
-            </Link>
+            </a>
           </div>
         </footer>
 

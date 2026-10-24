@@ -58,6 +58,12 @@ const DIRECTORY_ITEMS = [
 ];
 
 export default function Overview() {
+  // Routes to main holding company site on production, local root during development
+  const mainSiteUrl =
+    typeof window !== "undefined" && window.location.hostname.includes("localhost")
+      ? "/"
+      : "https://www.buildingit.in";
+
   return (
     <>
       <style>{`
@@ -114,15 +120,15 @@ export default function Overview() {
           =================================================
         */}
         <header className="grid grid-cols-1 md:grid-cols-12 border-b border-white/15 w-full sticky top-0 bg-black/90 backdrop-blur-md z-50 h-20">
-          {/* Logo Cell */}
+          {/* Logo Cell -> Routes back to parent holding company domain */}
           <div className="md:col-span-3 border-b md:border-b-0 md:border-r border-white/15 px-6 md:px-8 h-full flex items-center justify-between md:justify-start">
-            <Link href="/">
+            <a href={mainSiteUrl}>
               <img 
                 src="/logo.png" 
                 alt="buildingit" 
                 className="h-8 md:h-10 object-contain invert cursor-pointer" 
               />
-            </Link>
+            </a>
             <span className="md:hidden text-xs font-mono text-gray-500 uppercase">Menu</span>
           </div>
           
@@ -233,9 +239,13 @@ export default function Overview() {
             © {new Date().getFullYear()} buildingit Private Limited.
           </div>
           <div className="md:col-span-6 border-b md:border-b-0 md:border-r border-white/15 p-6 md:p-8 flex items-center gap-8">
-            <Link href="/" className="hover:text-white transition-colors cursor-pointer">Index</Link>
-            <Link href="/privacy" className="hover:text-white transition-colors cursor-pointer">Privacy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors cursor-pointer">Terms</Link>
+            <a href={mainSiteUrl} className="hover:text-white transition-colors cursor-pointer">
+              Index
+            </a>
+            <Link href="/overview" className="text-white cursor-pointer font-medium flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
+              Buildingit Policies
+            </Link>
           </div>
           <div className="md:col-span-3 p-6 md:p-8 flex items-center justify-end relative">
             <select className="bg-transparent text-gray-400 font-mono tracking-widest uppercase border-b border-white/15 pb-1 appearance-none pr-6 focus:outline-none focus:text-white cursor-pointer transition-colors">
